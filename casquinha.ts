@@ -52,12 +52,17 @@ export default class meucusco {
 
     public imporRespeito(): void {
         this._respeito = ((this._latido + this._disposicao) / 2)
-        let respect = this._respeito
-        if (respect > 10) {
+        let virilidade = this._respeito
+        this.aplicaRespeito()
+    }
+
+    aplicaRespeito(): void {
+        let virilidade = this._respeito
+        if (virilidade > 10) {
             console.log("Casquinha já consegue intimidar um gato!")
-        } else if (respect > 7) {
+        } else if (virilidade > 7) {
             console.log("Casquinha já consegue intimidar um coelho!")
-        } else if (respect > 4) {
+        } else if (virilidade > 4) {
             console.log("Casquinha já consegue intimidar um esquilo!")
         } else {
             console.log("Casquinha não é um cão intimidador...")
@@ -72,7 +77,12 @@ export default class meucusco {
         }
     }
 
-    public dormindo(): boolean {
+    public dormindo(): any {
+        let statusCansaco = this._cansaco
+        this.aplicaCansaco()
+    }
+
+    aplicaCansaco(): boolean {
         let statusCansaco = this._cansaco
         if (statusCansaco < 6) {
             console.log("O Casquinha está bem disposto. ")
@@ -80,10 +90,10 @@ export default class meucusco {
             console.log("Casquinha já quer ficar relaxando. ")
         } else if (statusCansaco < 15) {
             console.log("Põe ele pra descansar, tche! ")
-        } else if (statusCansaco <20){
-            console.log ("Você vai ser indiciado por crime contra os animais!")
+        } else if (statusCansaco < 20) {
+            console.log("Você vai ser indiciado por crime contra os animais!")
         } else {
-            console.log ("Chega de judiar do Casquinha!")
+            console.log("Chega de judiar do Casquinha!")
         }
 
         if (statusCansaco > 20) {
